@@ -20,10 +20,10 @@ def create_app(config_name):
 
     app.config.from_object(config_options[config_name])
 
-    # # Registering the blueprint
-    # from .main import main as main_blueprint
-    # app.register_blueprint(main_blueprint)
-    # login_manager.init_app(app)
+    # Registering the blueprint
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+    login_manager.init_app(app)
 
     #configure UploadSet
     configure_uploads(app,photos)
