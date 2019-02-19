@@ -24,13 +24,5 @@
             <li><a href="{{url_for('auth.login')}}"style="color: black;">ADMIN Sign in</a></li>
             {%endif%}
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            {% if current_user.is_authenticated %}
-            <li><a href="{{url_for('main.profile',uname=current_user.username)}}"style="color: black;">Profile</a></li>
-            <li><a href="{{url_for('auth.logout')}}"style="color: black;">SIGN OUT</a></li>
-            {% else %}
-            <li><a href="{{url_for('auth.login')}}"style="color: black;">SIGN IN</a></li>
-            {%endif%}
-          </ul>
     </div>
 </div>
