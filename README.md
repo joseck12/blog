@@ -39,11 +39,11 @@ A flask application whereby the writer can create a blog and subscribers can vie
 
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| Display Blogs | *On the Landing Page*| user can view different blogs
-| Blogs And Comment | * On the Landing Page*| Once viewer has read a blog they can comment on it|
-| As An Admin Sign in| * On The Landing Page Navbar*| writter can Sign in|
-| Post A Blog | * On Page Loading *| Writter will click On the submitt form to add a Blog|
-| Deleting a Blog | *On the Landing Page *| Writter can click on the delete button to delete a blog
+| Displaying Blogs | On the Home Page| User can view different blogs
+| Blogs And Comment |  On the Home Page| After reading a viewer can comment on blogs|
+| Admin Sign in|  On The Home Page Navigation bar| Writer can Sign in|
+| Post A Blog | After Page Loading | Writer will feed in the form and click on the submit button to post a blog|
+| Deleting a Blog | On the Home Page | Writer can delete blogs by clicking on the delete button|
 
 ## Known Bugs
 - No known errors. Incase of any noticeable bugs contact [jogachi4@gmail.com](gmail.com)
@@ -53,7 +53,27 @@ A flask application whereby the writer can create a blog and subscribers can vie
     - Joseck Ogachi
 
 
-### License
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
-Copyright (c) {2018} **{By Joseck Ogachi}**
+## License
+
+MIT license
+
+&copy; Copyright JoseckOgachi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ##live link to Heruko
