@@ -6,6 +6,7 @@ from .. import db,photos
 from flask_login import login_required,current_user
 from ..models import User,Blog,Comment,Subscriber
 from datetime import datetime
+from ..requests import get_quotes
 from ..email import mail_message
 
 
@@ -17,6 +18,13 @@ def profile(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
+    
+@main.route('/quotes', methods=['GET','POST'])
+def quotes():
+   quotes = get_quotes()
+   print (quotes)
+
+   return render_template('quotes.html',quotes = quotes)
 
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required

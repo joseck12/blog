@@ -97,6 +97,16 @@ class Comment(db.Model):
     def __repr__(self):
         return f'User {self.name}'
 
+class Quote:
+   '''
+   Quote class to define Quote Objects
+   '''
+
+   def __init__(self,id,author,quote):
+       self.id =id
+       self.author = author
+
+       self.quote = quote
 
 class Subscriber(UserMixin, db.Model):
     __tablename__="subscribers"
