@@ -102,11 +102,14 @@ class Quote:
    Quote class to define Quote Objects
    '''
 
-   def __init__(self,id,author,quote):
-       self.id =id
-       self.author = author
-
-       self.quote = quote
+   def __init__(self,count,recipes,publisher):
+       self.count =count
+       self.recipes = recipes
+       self.publisher = publisher
+       SOURCE_API_BASE_URL ='https://newsapi.org/v2/sources?category={}&apiKey={}'
+       ARTICLES_API_BASE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+       API_KEY= os.environ.get('API_KEY')
+       SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class Subscriber(UserMixin, db.Model):
     __tablename__="subscribers"
