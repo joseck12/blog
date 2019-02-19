@@ -29,8 +29,8 @@ A flask application whereby the writer can create a blog and subscribers can vie
 `Press Enter`.
 
 #Running the app
-- `Run chmod a+x start.py`
 - `./start.py`
+- `python3 manage.py server`
 
 #testing
 - `python3.6 manage.py test`

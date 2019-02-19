@@ -23,7 +23,7 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     # enable CSRF secret key
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY ='1234'
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://joseck:qwerty@localhost/blog"
 
     @staticmethod
