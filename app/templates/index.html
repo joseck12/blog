@@ -1,0 +1,72 @@
+{%extends 'base.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+    {% block content%}
+    <div class="container" style="float: right; background-image:url('https://images.pexels.com/photos/490466/pexels-photo-490466.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')">
+            <div class="row">
+                <div class="row">
+                        {% if current_user.is_authenticated %}
+                        <button style="margin-left:20px;"><a href="{{url_for('main.food')}}"><strong>Create A Blog</strong></a></button>
+                        {% endif %}
+
+                <strong><h1 style="color: black; text-align:center;"><i>Educational Blog</i></h1></strong>
+                <strong><h2 style="color:black; text-align:center;"><i>Welcome to the home of ideas and opinions!</i></h2></strong>
+                </div>
+            <div class="container" style="width: 50%;">
+                <h4 style="color:black;"><strong>Subscribe with your email and name<br><br>
+                Get timely notifications</strong></h4>
+            {{ wtf.quick_form(subscriber_form) }}
+            </div>
+            {% for category in food %}
+        </div>
+            </div>
+
+            <div class="row">
+             <div class="container" style="width:1400px; background-color: #AED6F1;">
+             <div class="col-md-12">
+                     <br>
+             <div class="thumbnail" style = "border: 1px solid #800000; margin-left: 180px; width: 1000px; float: center;">
+            <p>{{category.title}}</p>
+            <hr style="color:black;display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #800000;
+            margin: 1em 0;
+            padding: 0; ">
+            <p>{{category.category}}</p>
+            <hr style="color:black;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #800000;
+            margin: 1em 0;
+            padding: 0; ">
+            <p>{{category.posted}}</p>
+            <hr style="color:#A569BD; width: 50%;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #800000;
+            margin: 1em 0;
+            padding: 0; ">
+            <p><a href="/comments/{{category.id}}"><button style=" color: #800000;
+                text-align: center;
+                font-size: 15px;
+                padding: 10px;
+                border-radius: 8px;
+                width: 150px;
+                margin-left:380px">Comment</button></a></p>
+            </div>
+            {% if current_user.is_authenticated %}
+            <a href="/delete/{{category.id}}"><button style=" color: #800000;
+                text-align: center;
+                font-size: 15px;
+                padding: 10px;
+                border-radius: 8px;
+                width: 150px;
+                margin-left:565px">Delete Blog</button></a></p>
+            {% endif %}
+            </div>
+            </div>
+</div>
+        </div>
+            {% endfor %}
+
+    {% endblock %}

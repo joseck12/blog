@@ -1,0 +1,3 @@
+Hi {{user.username}}
+Welcome to Blog App.
+We have recieved your details.

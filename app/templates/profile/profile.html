@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="well" >
+<div class="row">
+
+  <div class="col-md-4">
+    <h3> {{user.username| capitalize}} </h3>
+
+    {% if user.bio %}
+      <p> {{user.bio}}</p>
+    {%else%}
+      <p style="color: #8E44AD; font-size: 150%;"> Hi! {{user.username| capitalize}} <i> Proceed to complete your bio</i></p>
+    {% endif %}
+  </div>
+
+
+  <div class="col-md-4">
+
+    {% if user.profile_pic_path %}
+    <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+    {%else%}
+    <p>Photo not set</p>
+    {% endif %}
+    {% if user == current_user %}
+    <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
+
+      <input type="file"  name="photo" class="form-control" required>
+      <input type="submit">
+    </form>
+    {% endif %}
+  </div>
+</div>
+</div>
+{% endblock %}

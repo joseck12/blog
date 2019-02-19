@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+
+# imported form flask bootstrap allowing rendering of forms
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% for message in get_flashed_messages() %}
+{{message}}
+{% endfor%}
+
+<div class="container-fluid" style="background-color: #AED6F1;">
+    <a href="#">..</a>
+    <br>
+    <br>
+    <br>
+<div class="container" style="background-color: #AED6F1; width:50%; opacity: 0.7;">
+{{ wtf.quick_form(comment_form) }}
+</div>
+<br>
+<br>
+{% for comment in comments  %}
+<div class="well">
+<ul>{{comment.description}}</ul>
+{% if current_user.is_authenticated %}
+<a href="/delete1/{{comment.id}}"><button style=" color: #7D3C98;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;">DELETE COMMENT</button></a></p>
+    </div>
+    {% endif %}
+{% endfor %}
+</div>
+{% endblock%}
