@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="row">
                         {% if current_user.is_authenticated %}
-                        <button style="margin-left:20px;"><a href="{{url_for('main.food')}}"><strong>Create A Blog</strong></a></button>
+                        <button style="margin-left:20px;"><a href="{{url_for('main.detail')}}"><strong>Create A Blog</strong></a></button>
                         {% endif %}
 
                 <strong><h1 style="color: black; text-align:center;"><i>Educational Blog</i></h1></strong>
@@ -16,7 +16,7 @@
                 Get timely notifications</strong></h4>
             {{ wtf.quick_form(subscriber_form) }}
             </div>
-            {% for category in food %}
+            {% for category in detail %}
         </div>
             </div>
 

@@ -46,18 +46,18 @@ def update_pic(uname):
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
 
-@main.route('/food', methods=['GET','POST'])
+@main.route('/detail', methods=['GET','POST'])
 @login_required
-def food():
+def detail():
     blog_form=BlogForm()
     if blog_form.validate_on_submit():
-        food = Blog(category=blog_form.category.data,title = blog_form.title.data)
-        db.session.add(food)
+        detail = Blog(category=blog_form.category.data,title = blog_form.title.data)
+        db.session.add(detail)
         db.session.commit()
     subscribers = Subscriber.query.all()
     for email in subscribers:
         mail_message("Hey Welcome To My Blog ","email/welcome_post",email.email,subscribers=subscribers)
-    return render_template('food.html',blog_form=blog_form)
+    return render_template('detail.html',blog_form=blog_form)
 
 
 @main.route('/', methods=['GET','POST'])
@@ -69,8 +69,8 @@ def subscriber():
         db.session.commit()
         mail_message("Hey Welcome To My Blog ","email/welcome_subscriber",subscriber.email,subscriber=subscriber)
     subscriber = Blog.query.all()
-    food = Blog.query.all()
-    return render_template('index.html',subscriber=subscriber,subscriber_form=subscriber_form,food=food)
+    detail = Blog.query.all()
+    return render_template('index.html',subscriber=subscriber,subscriber_form=subscriber_form,detail=detail)
 
 
 @main.route('/comments/<int:id>', methods=['GET','POST'])
@@ -92,7 +92,7 @@ def delete(id):
             for blogs in blog:
                 db.session.delete(blogs)
                 db.session.commit()
-            return redirect(url_for('main.food'))
+            return redirect(url_for('main.detail'))
         return ''
     except Exception as e:
         return(str(e))
